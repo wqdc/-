@@ -9,7 +9,7 @@ $("#link_login").on("click", function () {
 });
 
 const form = layui.form;
-const baseUrl = "http://www.liulongbin.top:3007";
+
 const layer = layui.layer;
 // layer.msg('hell')
 
@@ -33,7 +33,7 @@ $("#form_reg").on("submit", function (e) {
   };
   $.ajax({
     type: "POST",
-    url: baseUrl + "/api/reguser",
+    url:"/api/reguser",
     data,
     success: (res) => {
       console.log(res);
@@ -51,7 +51,7 @@ $("#form_login").on("submit", function (e) {
 
   $.ajax({
     type: "POST",
-    url: baseUrl + "/api/login",
+    url:"/api/login",
     data,
     //    return console.log(res);
     success: (res) => {
