@@ -7,7 +7,9 @@ $("#link_login").on("click", function () {
   $(".reg-box").hide();
   $(".login-box").show();
 });
+
 const form = layui.form;
+const baseUrl = 'http://www.liulongbin.top:3007'
 
 form.verify({
     repass:value => {
@@ -21,3 +23,19 @@ form.verify({
     ,'密码必须6到12位，且不能出现空格'
   ] 
 });
+
+$('#form_reg').on('submit',function(e){
+    e.preventDefault()
+    // console.log(1);
+    // const data = $(this).serialize()
+    const data ={
+        username:$('.reg-box [name = username').val(),
+        password:$('.reg-box [name = password').val()
+    }
+    $.ajax({
+        type:'POST',
+        url:baseUrl+'/api/reguser',
+        data,
+        sucess:res => console.log(res),
+    })
+})
