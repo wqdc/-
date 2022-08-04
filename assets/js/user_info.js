@@ -37,7 +37,7 @@ $('.layui-form').submit(function(e){
         data:form.val('formUserInfo'),
         success: res => {
             const {status,mesage} = res
-            if(status !=0) return layer.msg('mesage')
+            if(status !=0) return layer.msg(mesage)
             window.parent.getUserInfo()
         }
     })
