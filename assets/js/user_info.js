@@ -29,7 +29,7 @@ $('#reseBtn').click(function(e){
     e.preventDefault();
     initUserinfo()
 })
-$.('.layui-form').submit(function(e){
+$('.layui-form').submit(function(e){
     e.preventDefault()
     $.ajax({
         type:"POST",
